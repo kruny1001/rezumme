@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>ReZumme</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.13/angular.min.js"></script>
+    <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.4.2/base-min.css">
+</head>
+<body ng-app="docsSimpleDirective">
+
+<div ng-controller="Ctrl">
+    <my-customer info="naomi"></my-customer>
+    <hr>
+    <my-customer info="kevin"></my-customer>
+</div>
+
+<br/>
+<div ng-controller="Ctrl2">
+    Date format <input ng-model="format"><hr/>
+    Current time is: <span my-current-time="format"></span>
+</div>
+
+<h2>Creating a Directive that wraps other elements</h2>
+<div ng-controller="CtrlTransclusion">
+    <my-dialog>
+        Check out the contents, {{name}}!
+    </my-dialog>
+</div>
+
+<h2>Test</h2>
+<div ng-controller="Ctrl3">
+    <my-dialog2 ng-hide="dialogIsHidden" on-close="hideDialog()">
+        Check out the contents, {{name}}!
+    </my-dialog2>
+</div>
+
+<hr/>
+<h2> Creating a Directive that adds event listeners </h2>
+
+<span my-draggable>
+    <p>
+        <abbr title="Yahoo User Interface">YUI</abbr> is a free, open source JavaScript and CSS library for building richly interactive web applications.
+    </p>
+</span>
+
+<hr/>
+<h2> Creating Directive that Communicate </h2>
+
+
+
+<script src="js/controller.js"></script>
+<script src="js/time.js"></script>
+</body>
+</html>
